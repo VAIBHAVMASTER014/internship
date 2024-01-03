@@ -15,7 +15,7 @@ var a = 2 / 5;
 console.log(a)
 //above / operator is used that will divide two values
 
-var a = 2 > 5;
+var a = 2 < 5;
 console.log(a)
 //above > operator is used that will compare two values
 
