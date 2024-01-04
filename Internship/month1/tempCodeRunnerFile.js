@@ -1,2 +1,1 @@
-
-demo.prop = "main_function";
+console.log(this);
