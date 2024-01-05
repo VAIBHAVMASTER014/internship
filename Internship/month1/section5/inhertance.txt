@@ -1,0 +1,1 @@
+two types inheritance in javascript i>classical inheritance ii>prototypal inheritance

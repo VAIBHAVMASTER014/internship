@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "underscore": "^1.13.6",
+    "underscore.js": "^1.0.0"
+  }
+}
