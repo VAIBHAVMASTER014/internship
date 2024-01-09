@@ -1,0 +1,2 @@
+default function arguments
+let assume we have request function that return the method of the request function
