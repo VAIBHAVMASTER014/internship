@@ -24,4 +24,4 @@ function Fibo(num){
         return arr;
     }
 }
-console.log(Fibo(10));
+console.log(Fibo(50));

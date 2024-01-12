@@ -13,4 +13,4 @@ function parts(arr,chunk){
     return array
 
 }
-console.log(parts([1,2,3,4,5,6,7,8,9],3));
+console.log(parts([1,2,3,4,5,6,7,8,9],4));

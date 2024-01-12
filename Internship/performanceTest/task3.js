@@ -4,18 +4,23 @@ function outer(number){
  function personalCounter(){
         num +=1;
     }
-    personalCounter();
+    
 
 
  function showCounter(){
         return num;
     }
-    showCounter();
-    return num
+    
+    return {personalCounter,showCounter}
 }
 
 var obj = outer(10);
-console.log(obj);
+// console.log(obj);
 
-// obj.personalCounter()
-// console.log(obj.showCounter())
+var obj2 = outer(20)
+// console.log(obj2);
+obj.personalCounter()
+obj.personalCounter()
+obj.personalCounter()
+obj.personalCounter()
+console.log(obj.showCounter())
