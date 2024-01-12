@@ -64,3 +64,12 @@ showAllDetails()
 // console.log(`Employee ${obj1.name} details: name : ${})
 // console.log(obj2);
 // console.log(allEmp)
+function say(message) {
+    return (message);
+}
+
+let result = say('Hello');
+console.log('Result:', result)
+
+//In function when we invoke function at that time we pass value that are called arguments
+
