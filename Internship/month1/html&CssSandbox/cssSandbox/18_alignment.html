@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Flex</title>
+    <!-- align-items -->
+    <!-- justify-content -->
+    <!-- align-self -->
+    <!-- flex-flow -->
+    <!-- align-content -->
+    
+    <style>
+        .flex-container{
+            display:flex;
+            background: #333;
+            /* flex-direction: column; */
+            height:50vh;
+            margin:auto;
+            box-sizing: border-box;
+
+            /* centers to the cross axis */
+            align-items: center;
+
+            /* centers to the main axis */
+            justify-content: space-around;
+            justify-content: space-between;
+            /* justify-content: space-evenly; */
+        }
+        .item{
+            border:1px solid rgb(204, 197, 197);
+            padding: 0.5rem;
+            margin:1rem;
+            width: 5rem;
+            background-color: #555;
+            color:white;
+            height: 2rem;
+            text-align:center;
+            font-size:1.5rem;
+            
+            
+        }
+        .item1{            
+           align-self: flex-start;
+        }
+        
+        .item3{            
+            align-self: flex-end;
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+        <div class="item item1">item1</div>
+        <div class="item item2">item2</div>
+        <div class="item item3">item3</div>
+    </div>
+</body>
+</html>

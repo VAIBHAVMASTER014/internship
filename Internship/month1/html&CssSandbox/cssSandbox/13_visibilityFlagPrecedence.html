@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Test File
+    </title>
+    <style>
+        /* negative margin is also possible but using negative margin is not good habit */
+        p{
+            /* !important flag is like constant now nothing can affect or change this property this will override */
+            color:red !important;
+        }
+        .page-para{
+            color:blue;
+        }
+        h2{
+            /* below property will make content disappear from dom and remove place too */
+            /* display: none; */
+
+            /* below property also disappear content from dom but it doesn't remove the place in dom'*/
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <h2>Heading one</h2>
+    <p class="page-para">Precedence in CSS is like most recent changed property is going to affect.<br>If dont want that then use flag &lt;!important&gt; during declaring css</p>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form style</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+            
+        }
+        body{
+            background:orange;
+        }
+        .container{
+            
+        }
+        .form{
+            margin:auto;
+            margin-top:3em;
+            height:37em;
+            width:25em;
+            border-radius: 5px;
+            background-color:rgb(252, 252, 252);
+        }
+        .header{
+            padding-top: 10px;
+            text-align: center;
+            line-height: 2em;
+        }
+        .header span{
+            font-size:2em;
+        }
+        .form-content{
+           margin-top:1.5em;
+           
+        }
+        .field{
+            
+            padding:0.5em 2em;
+        }
+        .field input{
+            padding:0.9em;
+            width: 100%;
+            border-radius: 5px;
+            border:1px solid rgb(231, 216, 216);
+        }
+        .btn{
+            text-align: center;
+            background: #697477;
+            padding:0.8em;
+            color:white;
+            border-radius: 5px;
+            margin:0em 2em;
+            cursor: pointer;
+        }
+        .footer{
+            text-align: center;
+            margin-top: 0.5em;
+        }
+        .footer span{
+            color:blue;
+        }
+        .after-form{
+            
+            text-align: center;
+            margin-top: 0.5em;
+        }
+        .after-form span{
+            color:#697477;
+            cursor:pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="form">
+            <div class="header">
+                <span>Sign Up</span>
+                <p>It's free and only takes a minute</p>
+            </div>
+            <div class="form-content">
+                <div class="field">
+                    <label for="fname" class="form-lable">First Name</label><br>
+                    <input type="text" id="fname" name="fname" placeholder="Enter First Name">
+                </div>
+                <div class="field">
+                    <label for="lname" class="form-lable">Last Name</label><br>
+                    <input type="text" id="lname" name="lname" placeholder="Enter First Name">
+                </div>
+                <div class="field">
+                    <label for="email" class="form-lable">Email</label><br>
+                    <input type="email" id="email" name="email" placeholder="Enter First Name">
+                </div>
+                <div class="field">
+                    <label for="password" class="form-lable">Password</label><br>
+                    <input type="password" id="password" name="password" placeholder="Enter First Name">
+                </div>
+                <div class="field">
+                    <label for="cpassword" class="form-lable">Confirm Password</label><br>
+                    <input type="password" id="cpassword" name="cpassword" placeholder="Enter First Name">
+                </div>
+                <div class="btn">
+                    SignUp
+                </div>
+            </div>
+            <div class="footer">
+                <p>By clicking SignUp button you agree to our<br> <span>Terms & Conditions</span> and <span>Privacy Policy</span></p>
+            </div>
+        </div>
+        <div class="after-form">
+            <p>Already have an account? <span>Login Here</span></p>
+        </div>
+    </div>
+</body>
+</html>
