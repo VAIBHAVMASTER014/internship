@@ -4,17 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Html semantic tags</title>
+    <style>
+        .header{
+            background: rgb(49, 38, 38);
+            color:white;
+            padding:10px;
+            margin-bottom: 10px;
+        }
+        .footer{
+            background: rgb(49, 38, 38);
+            color:white;
+            padding:10px;
+            margin-bottom: 10px;
+        }
+        .card{
+            background: rgba(218, 200, 200, 0.49);
+            padding:15px;
+            border:2px solid rgba(216, 194, 194, 0.822)
+            
+        }
+        .leftSection{
+            margin-right:15px;
+            max-width: 28rem;
+        }
+        .sectionContent{
+            display:flex;
+        }
+        .rightSection{
+            height:20rem;
+        }
+
+    </style>
 </head>
 <body>
-    <header>
+    <header class="header">
         <div>
             <h2>My Website</h2>
             <p>Just Another Website </p>
         </div>
     </header>
-    <main>
-        <section>
-            <div>
+    <main class="sectionContent">
+        <section class="leftSection">
+            <div class = "card ">
                 <h3>Welcome To My WebSite</h3>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum, quos omnis itaque laudantium a quasi, sit impedit recusandae laboriosam accusamus inventore earum quas sunt officiis dolor reprehenderit, iusto eum. Consectetur?</p>
                 <a href="#">Click for more info</a>
@@ -29,8 +60,8 @@
 
             </div>
         </section>
-        <section>
-            <div>
+        <section class = "card rightSection">
+            <div >
                 <h4>
                     Navigation
                 </h4>
@@ -38,14 +69,24 @@
                 <a href="#">About</a><br>
                 <a href="#">Contact</a><br>
             </div>
+            <hr>
             <div>
                 <h4>Contact us</h4>
                 <p>
                     <strong>Address</strong>Lorem ipsum dolor sit amet consectetur adipisicing.
                 </p>
+                <p>
+                    <strong>Phone no:</strong>789870789
+                </p>
+                <p>
+                    <strong>Email</strong>abc@gmail.com
+                </p>
             </div>
         </section>
     </main>
+    <footer class = 'footer'>
+       <p> Copyright &copy; Website created by Rio in 2024</p>
+    </footer>
     
 </body>
 </html>

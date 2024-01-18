@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css Selectors</title>
+    <!-- Internal css -->
+    <style>
+        /* Element selector */
+        body{
+            background:rgba(124, 146, 26, 0.436);
+        }
+        /* write name of the tag to apply css on all tag which is define */
+        p{
+            color:green;
+        }
+        /* class selectors:for class use . first then name of class */
+        .firstClass{
+            color:blue;
+        }
+
+        /* id selectors:for id use # then name of the id */
+        #secondClass{
+            color:rgb(114, 185, 84);
+        }
+
+        /* multiple selector */
+        .first,#second{
+            margin-bottom: 9px;
+            background:rgba(233, 217, 217, 0.558);
+            border:2px solid rgba(228, 215, 215, 0.488);
+            padding:6px;
+        }
+
+        /* nested selector */
+        #second p{
+            font-size: larger;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="first">
+        <h2 class = "firstClass">Paragraph One</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur saepe sit enim nisi accusamus eius corporis reiciendis in aspernatur inventore.</p>
+    </div>
+    <div id="second">
+        <h2 id = "secondClass">Paragraph Two</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur saepe sit enim nisi accusamus eius corporis reiciendis in aspernatur inventore.</p>
+    </div>
+    
+</body>
+</html>
