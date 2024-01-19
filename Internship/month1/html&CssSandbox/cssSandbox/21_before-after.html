@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Before & After</title>
+    <style>
+        /* after */
+        div lable::after{
+            content:'*';
+            color:red;
+            padding: 3px;
+        }
+
+        /* before */
+        div lable::before{
+            content:'@';
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container{
+            height: 100vh;
+            width: 100vw;
+            padding: 0rem 4rem;
+            justify-content: center;
+            text-align: justify;
+            line-height: 1.5em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+           
+            background:#333 url('./image/background17thjan.jpg') no-repeat center center/cover ;
+            opacity: 0.6;
+            color:white;
+        }
+        p{
+           padding: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- <lable>Name</lable>
+        <input type="text" id="name"> -->
+        <h2>Welcome to the Rio.</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo temporibus id consequuntur aspernatur delectus tempore perspiciatis eligendi quidem rerum ipsum in distinctio sed tenetur, velit inventore earum! Impedit, aliquid ratione.</p>
+        <h3>Lorem ipsum dolor sit.</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio in labore id soluta est corrupti esse quod, modi nobis reiciendis?
+        </p>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box-shadow</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+        .container{
+            height: 100vh;
+            
+            text-align: center;
+            
+            background: #ffffff;
+            color: #000000;
+            display: flex;
+        }
+        .box{
+            
+            margin: 1rem 2rem;
+            height: 20vh;
+            width:30vw;
+            padding: 3rem 0rem;
+            background:rgb(255, 255, 255);
+            /* offset-x | offset-y | color*/
+            box-shadow:5px 5px teal;
+            /* offset-x | offset-y | color (negative value)*/
+            box-shadow:-5px -5px teal;
+            /* offset-x | offset-y | blur | color*/
+            box-shadow:10px 10px 10px teal;
+             /* offset-x | offset-y | blur | spread-radius | color */
+            box-shadow:5px 5px 20px 5px teal; 
+
+            border: 1px solid #333;
+            /* multiple shadow */
+            box-shadow: -5px -5px 30px 5px red, 5px 5px 30px 5px blue;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box box-1">box 1</div>
+        <div class="box box-2">box 2</div>
+        <div class="box box-3">box 3</div>
+    </div>
+</body>
+</html>

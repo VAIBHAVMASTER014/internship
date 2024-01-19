@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text-shadow</title>
+    <style>
+        .container{
+            font-size: 2rem;
+            font-family:Arial, Helvetica, sans-serif;
+            
+        }
+        .a{
+            /* h-shadow | v-shadow | color */
+            text-shadow: 3px 4px red;
+        }
+        .b{
+            /* h-shadow | v-shadow | blur | color */
+            text-shadow: 3px 3px 5px rgb(126, 102, 65);
+        }
+        .c{
+            color:white;
+            /* white text */
+            text-shadow: 3px 3px 5px steelblue;
+
+        }
+        .d{
+            /* negative value */
+            text-shadow: -3px -3px 5px rgb(91, 118, 141);
+
+        }
+    </style>    
+</head>
+<body>
+    <div class="container">
+        <h2 class = 'a'>Welcome To India</h2>
+        <h2 class = 'b'>Welcome To India</h2>
+        <h2 class = 'c'>Welcome To India</h2>
+        <h2 class = 'd'>Welcome To India</h2>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS variable</title>
+    <style>
+        :root{
+            --primaryColor : steelblue;
+            --secondaryColor : skyblue;
+            --lightColor : white;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+        .container{
+            text-align: center;
+
+        }
+        header{
+            background: var(--primaryColor);
+            border-bottom: 5px solid var(--secondaryColor);
+            padding:0.5rem;
+            margin: 0.5rem 0.3rem;
+            color:white;
+
+            /* topleft | topright | bottom left | bottom right */
+            border-radius: 0.3rem 0.3rem 0rem 0rem;
+        }
+        .box{
+            background : var(--primaryColor);
+            margin:0.3rem;
+            color:white;
+            padding: 0.5rem 0;
+            border-bottom: 5px solid var(--secondaryColor);
+            /* text-align: justify; */
+        }
+        .content{
+            display:flex;
+            justify-content:center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="title">
+            CSS Variable
+        </header>
+        <div class="content">
+            <div class="box box1">
+                <h3>Heading one
+                </h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, cumque.</p>
+    
+            </div>
+            <div class="box box2">
+                <h3>Heading Two
+                </h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, cumque.</p>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
