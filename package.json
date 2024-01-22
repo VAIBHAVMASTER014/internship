@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "typescript": "^5.3.3",
     "underscore": "^1.13.6",
     "underscore.js": "^1.0.0"
   }

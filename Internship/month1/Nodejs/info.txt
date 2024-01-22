@@ -1,0 +1,8 @@
+node.js is an open source , cross platform, javascript runtime environment that executes js code out side browser
+
+It is built on google's v8 js engine which same engine used in google chrome.
+
+nodejs uses asynchronous programming.
+
+node.js is commonly used for server-side scripting with js.
+

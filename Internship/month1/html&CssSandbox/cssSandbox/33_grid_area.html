@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid template areas</title>
+    <style>
+        .container{
+            display:grid;
+            grid-template-areas: 
+            'header header header'
+            'content content sidebar'
+            'box1 box2 box3'
+            'footer footer footer'
+            ;
+            gap:0.5rem;
+        }
+        @media (max-width: 508px){
+            .container{
+                grid-template-areas: 
+            'header '
+            'content '
+            'sidebar'
+            'box1'
+            'box2'
+            'box3'
+            'footer '
+            ;
+            }
+        }
+        .header{
+            grid-area: header;
+        }
+        .sidebar{
+            grid-area: sidebar;
+        }
+        .content{
+            grid-area: content;
+        }
+        .box1{
+            grid-area:box1;
+        }
+        .box2{
+            grid-area:box2;
+        }
+        .box3{
+            grid-area:box3;
+        }
+        .footer{
+            grid-area:footer;
+        }
+
+        .header,.content,.sidebar,.footer,.box1,.box3,.box2{
+            border:1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h2>My website</h2>
+
+        </header>
+        <div class="content">
+            <h3>Heading one</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos, libero possimus quaerat ut, neque sit consectetur cum est totam nihil assumenda quasi cumque beatae, natus exercitationem. Exercitationem adipisci quasi quod.</p>
+        </div>
+        <div class="sidebar">
+            <p>contact no:79898798798</p>
+            <p>email:abc@gmail.com</p>
+            <p>area:gujrat</p>
+        </div>
+        <div class="box3">
+            <h3>Heading
+            </h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quos velit voluptates vel veritatis corporis mollitia corrupti, deleniti vitae necessitatibus!
+                
+            </p>
+        </div>
+        <div class="box1">
+            <h3>Heading
+            </h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quos velit voluptates vel veritatis corporis mollitia corrupti, deleniti vitae necessitatibus!
+
+            </p>
+        </div>
+        <div class="box2">
+            <h3>Heading
+            </h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quos velit voluptates vel veritatis corporis mollitia corrupti, deleniti vitae necessitatibus!
+
+            </p>
+        </div>
+        <div class="footer">
+            <p>&copy copyright in 2024.</p>
+        </div>
+
+    </div>
+</body>
+</html>

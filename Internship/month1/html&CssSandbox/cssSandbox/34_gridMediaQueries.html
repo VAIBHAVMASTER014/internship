@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid & media queries</title>
+    <style>
+        .container{
+            display:grid;
+            grid-template-columns: repeat(2,1fr);
+
+        }
+        @media (max-width:500px){
+           .container{
+            grid-template-columns: 1fr;
+           }
+            
+        }
+        .box1{
+            /* grid-area:box1; */
+            padding:10px;
+            border:1px solid #777;
+        }
+        .box2{
+            /* grid-area:box2; */
+            padding:20px;
+            border:1px solid #777;
+        }
+        .box3{
+            /* grid-area:box3; */
+            padding:20px;
+            border:1px solid #777;
+        }
+        .box4{
+            /* grid-area:box3; */
+            padding:20px;
+            border:1px solid #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box1">
+            <h3>Heading
+            </h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quos velit voluptates vel veritatis corporis mollitia corrupti, deleniti vitae necessitatibus!
+
+            </p>
+        </div>
+        <div class="box2">
+            <h3>Heading
+            </h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quos velit voluptates vel veritatis corporis mollitia corrupti, deleniti vitae necessitatibus!
+
+            </p>
+        </div>
+        <div class="box3">
+            <h3>Heading
+            </h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quos velit voluptates vel veritatis corporis mollitia corrupti, deleniti vitae necessitatibus!
+
+            </p>
+        </div>
+        <div class="box4">
+            <h3>Heading
+            </h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quos velit voluptates vel veritatis corporis mollitia corrupti, deleniti vitae necessitatibus!
+
+            </p>
+        </div>
+    </div>
+</body>
+</html>
