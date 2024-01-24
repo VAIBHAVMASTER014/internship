@@ -1,27 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ExpenseItem.css";
 import ExpenseDate from "./ExpenseDate";
-
+import BgCard from "../ui/BgCard";
 //object destructuring can be also used instead of prop
 // prop or {title,amount,date}
 
 const ExpensItem = (prop) => {
+  const [title, setTitle] = useState(prop.title);
   const expenseDate = prop.date;
-  const expenseTitle = prop.title;
   const expenseAmount = prop.amount;
 
+  const clickHandler = () => {
+    setTitle("updated!!!!");
+  };
   return (
-    <div className="transaction">
+    <BgCard className="transaction">
+      <ExpenseDate className="expense" date={expenseDate} />
       <div className="expense-data">
-        <ExpenseDate className="expense" date={expenseDate} />
         <div className="title">
-          <span>{expenseTitle}</span>
+          <span>{title}</span>
         </div>
         <div className="amount">
           <span>{expenseAmount}</span>
         </div>
+        <button onClick={clickHandler}>change_Title</button>
       </div>
-    </div>
+    </BgCard>
   );
 };
 

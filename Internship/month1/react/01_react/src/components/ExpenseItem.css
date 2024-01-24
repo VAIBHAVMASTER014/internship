@@ -1,15 +1,16 @@
 .transaction{
-    margin:auto;
+    /* margin:auto; */
     display:flex;
     width: 70vw;
     align-items: center;
     justify-content: space-between;
     background-color:#444;
-    padding:0rem 0rem;
+    padding:0;
     border:1px solid #444;
-    margin:0.2rem auto;
+    margin:0.5rem ;
     border-radius: 1.5rem;
     color:white;
+    height: 3rem;
   
 
 }
@@ -25,17 +26,19 @@
 }
 .expense-data{
     display: flex;
-    justify-content: center;
-    padding: 0.5rem 1.5rem;
+    justify-content: space-between;
+    padding: 0rem 0.5rem;
+    width: 100%;
     align-items: center;
 }
 .date{
-    background-color:rgba(23,23,23,0.6);
+    background-color:rgba(23,23,23,1);
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 1rem;
-    padding: 0.5rem;
+    border-radius: 0.5rem;
+    padding: 0.4rem;
+    margin: 0 0.3rem;
     border: 1px solid #fff;
     
 }

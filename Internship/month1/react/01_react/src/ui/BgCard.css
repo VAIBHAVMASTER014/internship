@@ -1,0 +1,7 @@
+.card-bg{
+    box-shadow: 5px 5px 5px rgba(23,23,23,0.56);
+    border-radius: 0.4rem;
+    padding: 1rem 0;
+    width: 95%;
+    /* margin: 1rem ; */
+}

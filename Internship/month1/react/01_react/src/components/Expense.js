@@ -1,10 +1,11 @@
 import ExpenseItem from "./ExpenseItem";
 import './Expense.css'
+import BgCard from "../ui/BgCard";
 const Expense = (props) => {
   const expense = props.expense;
 
   return (
-    <div className="expense">
+    <BgCard className="expense">
       <ExpenseItem
         title={expense[0].title}
         amount={expense[0].amount}
@@ -25,7 +26,7 @@ const Expense = (props) => {
         amount={expense[3].amount}
         date={expense[3].date}
       />
-    </div>
+    </BgCard>
   );
 };
 
