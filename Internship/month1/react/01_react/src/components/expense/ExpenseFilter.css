@@ -1,0 +1,16 @@
+.expense-filter{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    margin: 0.5rem 0rem  2.5rem ;
+    padding: 0rem 0.59rem;
+    width: 90%;
+    color:white;
+}
+.filter-btn{
+    background-color:rgb(231, 223, 223);
+    padding:0.6rem 1.5rem;
+    border-radius: 0.8rem;
+    border:2px solid #3d2f2f;
+}
