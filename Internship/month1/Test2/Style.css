@@ -874,6 +874,9 @@
     .about-right{
         padding-left:1rem;
     }
+    .subscript{
+      border-radius: 2rem;
+    }
     .sub-content,
   .title,
   .about-title,
