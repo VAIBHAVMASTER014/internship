@@ -764,6 +764,14 @@
     }
 }
 @media screen and (max-width: 426px) {
+  .card-content p {
+    font-size: 0.89rem;
+    line-height: normal;
+    display: inline;
+    color: #747474;
+    overflow: auto;
+    width: 13rem;
+}
     .info{
         font-size:16px;
         width:  12rem;
