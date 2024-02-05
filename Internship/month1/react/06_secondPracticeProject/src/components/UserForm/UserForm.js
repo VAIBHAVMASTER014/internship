@@ -1,8 +1,7 @@
 import React from "react";
 
 // imported files
-import PopUp from "../common/popup/PopUp";
-
+import Input from "../common/Input/Input";
 // css files
 import classes from "./UserForm.module.css";
 
@@ -12,9 +11,35 @@ const initialInvestment = {
 };
 
 const UserForm = ({ onAddData }) => {
-  const [error, setError] = React.useState(false);
 
+  const [error, setError] = React.useState(false);
   const [userInput, setUserInput] = React.useState(initialInvestment);
+  const fields = [
+    {
+      label: {
+        name: "Username",
+      },
+      input: {
+        type: "text",
+        value: userInput["username"],
+        placeholder: "Enter username",
+        onChange: (event) => inputChangeHandler("username", event.target.value),
+        id: "username",
+      },
+    },
+    {
+      label: {
+        name: "Age",
+      },
+      input: {
+        type: "number",
+        value: userInput["age"],
+        placeholder: "Enter age",
+        onChange: (event) => inputChangeHandler("age", event.target.value),
+        id: "age",
+      },
+    },
+  ];
 
   const inputChangeHandler = (input, value) => {
     setUserInput((prevData) => {
@@ -28,7 +53,6 @@ const UserForm = ({ onAddData }) => {
   const submitHandler = (event) => {
     event.preventDefault();
     onAddData(userInput);
-
     setUserInput(initialInvestment);
   };
   const errorOnSubmit = (event) => {
@@ -37,12 +61,23 @@ const UserForm = ({ onAddData }) => {
   };
 
   return (
-    <div>
+    <div className={classes.container}>
       <form className={classes.form}>
-        <p>
+        {fields.map((field) => (
+          <p>
+            <label className={classes.label}>{field.label.name}</label>
+            <Input
+              id={field.input.id}
+              type={field.input.type}
+              value={field.input.value}
+              placeholder={field.input.placeholder}
+              onChange={field.input.onChange}
+            />
+          </p>
+        ))}
+        {/* <p>
           <label className={classes.label}>Username</label>
-          <input
-            className={classes.input}
+          <Input
             id="username"
             type="text"
             onChange={(event) =>
@@ -53,19 +88,18 @@ const UserForm = ({ onAddData }) => {
         </p>
         <p>
           <label className={classes.label}>Age</label>
-          <input
+          <Input
             className={classes.input}
             id="age"
-            type="text"
+            type="number"
             onChange={(event) => inputChangeHandler("age", event.target.value)}
             value={userInput["age"]}
           />
-        </p>
+        </p> */}
         {error && (
-          // <p style={{ color: "red", fontSize: "19px" }}>
-          //   Please fill all fields
-          // </p>
-          <PopUp errorHandler={error} valueOfAge={userInput["age"]}/>
+          <p style={{ color: "red", fontSize: "19px" }}>
+            Please fill all fields
+          </p>
         )}
         <button
           className={

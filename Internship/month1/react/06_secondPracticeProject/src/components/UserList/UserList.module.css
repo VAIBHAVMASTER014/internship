@@ -6,6 +6,17 @@
   margin: auto;
   flex-direction: column;
 }
+.invalid{
+  
+    background-color: white;
+    opacity: 0.4;
+    padding: 1rem;
+    display: flex;
+    width: 40vw;
+    margin: auto;
+    flex-direction: column;
+  
+}
 .list {
   border: 1px solid black;
   padding: 0.5rem;

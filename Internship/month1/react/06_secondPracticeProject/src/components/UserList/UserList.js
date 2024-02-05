@@ -1,13 +1,12 @@
 import React from "react";
 
 import classes from "./UserList.module.css";
-const UserList = ({ allUserData }) => {
+const UserList = ({ allUserData, error }) => {
   return (
-    <div className={classes.area}>
+    <div className={error ?classes.invalid : classes.area}>
       {allUserData.map((user) => (
         <li className={classes.list}>{user.username +"("+user.age +' years old)'}</li>
-      ))}
-    </div>
+      ))}    </div>
   );
 };
 

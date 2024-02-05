@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 
 // imported files
 import NewUser from "./components/NewUser/NewUser";
 import UserList from "./components/UserList/UserList";
 
 const App = () => {
-  const [allData, setAllData] = React.useState([]);
+  const [allData, setAllData] = useState([]);
   const handleUserData = (Data) => {
     setAllData([...allData, Data]);
     console.log(allData);
