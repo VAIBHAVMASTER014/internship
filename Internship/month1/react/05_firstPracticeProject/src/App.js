@@ -1,38 +1,48 @@
-import React from 'react';
+import {React, useState} from "react";
 
-import Form from "./component/Form";
-import Header from "./component/Header";
-import Table from "./component/Table";
+import Form from "./component/Form/Form";
+import Header from "./component/Header/Header";
+import Table from "./component/Table/Table";
 
 function App() {
-  const [userInput,setUserInput] = React.useState('');
+  const [userInput, setUserInput] = useState("");
   const calculateHandler = (userInput) => {
     console.log(userInput);
     setUserInput(userInput);
   };
-  const yearlyData = []; 
+  const yearlyData = [];
 
-    let currentSavings = userInput["current-savings"]; 
-    const yearlyContribution = userInput["yearly-contribution"]; 
-    const expectedReturn = userInput["expected-return"] / 100;
-    const duration = userInput["duration"];
+  let currentSavings = userInput["current-savings"];
+  const yearlyContribution = userInput["yearly-contribution"];
+  const expectedReturn = userInput["expected-return"] / 100;
 
-    for (let i = 0; i < duration; i++) {
-      const yearlyInterest = currentSavings * expectedReturn;
-      currentSavings += yearlyInterest + yearlyContribution;
-      yearlyData.push({
-        year: i + 1,
-        yearlyInterest: yearlyInterest,
-        savingsEndOfYear: currentSavings,
-        yearlyContribution: yearlyContribution,
-      });
-    }
+  const duration = userInput["duration"];
+
+  for (let i = 0; i < duration; i++) {
+    const yearlyInterest = currentSavings * expectedReturn;
+    currentSavings += yearlyInterest + yearlyContribution;
+    yearlyData.push({
+      year: i + 1,
+      yearlyInterest: yearlyInterest,
+      savingsEndOfYear: currentSavings,
+      yearlyContribution: yearlyContribution,
+    });
+  }
 
   return (
     <div>
       <Header />
-      <Form onCalculate = {calculateHandler}/>
-      <Table tableData = {yearlyData} initialInvestment={userInput["current-savings"]}/>
+      <Form onCalculate={calculateHandler} />
+      {!userInput && 
+      <p
+      style={{textAlign:'center'} }
+      >No Investment Calculated yet.</p>}
+      {userInput && (
+        <Table
+          tableData={yearlyData}
+          initialInvestment= {userInput["current-savings"]}
+        />
+      )}
     </div>
   );
 }

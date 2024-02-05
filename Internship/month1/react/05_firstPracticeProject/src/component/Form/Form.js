@@ -1,4 +1,9 @@
 import React from "react";
+
+import classes from './form.module.css'
+
+
+
 const defaultUserInput = {
   "current-savings": 10000,
   "yearly-contribution": 1200,
@@ -18,7 +23,7 @@ const Form = ({onCalculate}) => {
     setUserInput((prevData) => {
       return {
         ...prevData,
-        [input]: value,
+        [input]: +value,
       };
     });
   };
@@ -28,8 +33,8 @@ const Form = ({onCalculate}) => {
 
   return (
     <div>
-      <form className="form">
-        <div className="input-group">
+      <form className={classes.form}>
+        <div className={classes['input-group']}>
           <p>
             <label htmlFor="current-savings">Current Savings ($)</label>
             <input
@@ -53,7 +58,7 @@ const Form = ({onCalculate}) => {
             />
           </p>
         </div>
-        <div className="input-group">
+        <div className={classes['input-group']}>
           <p>
             <label htmlFor="expected-return">
               Expected Interest (%, per year)
@@ -79,11 +84,11 @@ const Form = ({onCalculate}) => {
             />
           </p>
         </div>
-        <p className="actions">
-          <button type="reset" className="buttonAlt" onClick={resetHandler}>
+        <p className={classes.actions}>
+          <button type="reset" className={classes.buttonAlt} onClick={resetHandler}>
             Reset
           </button>
-          <button type="submit" className="button" onClick={submitHandler}>
+          <button type="submit" className={classes.button} onClick={submitHandler}>
             Calculate
           </button>
         </p>
