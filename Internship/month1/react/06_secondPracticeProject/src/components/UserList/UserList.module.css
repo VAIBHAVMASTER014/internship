@@ -25,4 +25,12 @@
   list-style: none;
   font-size: 19px;
   margin: 1rem 0rem;
+  display:flex;
+  justify-content:space-between;
+}
+.list-item{
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  cursor: pointer;
 }

@@ -8,7 +8,17 @@ const App = () => {
   const [allData, setAllData] = useState([]);
   const handleUserData = (Data) => {
     setAllData([...allData, Data]);
+    
+  };
+  
+  var updatedData ;
+  const updateHandleUserData = (Data) => {
+
+  };
+  const deleteHandleUserData = (id) => {
     console.log(allData);
+      allData.splice(allData.indexOf(id), 1);
+      console.log(allData);
   };
   return (
     <>
@@ -18,7 +28,7 @@ const App = () => {
           No data Added.
         </p>
       ) : (
-        <UserList allUserData={allData} />
+        <UserList allUserData={allData} onDeleteData={deleteHandleUserData}  onUpdateData={updateHandleUserData}/>
       )}
     </>
   );

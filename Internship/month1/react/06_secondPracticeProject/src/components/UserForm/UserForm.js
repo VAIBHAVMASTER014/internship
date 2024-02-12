@@ -46,6 +46,7 @@ const UserForm = ({ onAddData }) => {
       return {
         ...prevData,
         [input]: value,
+        id: Math.random().toString()
       };
     });
     setError(false);
