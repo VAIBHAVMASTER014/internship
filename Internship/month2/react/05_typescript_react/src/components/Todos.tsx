@@ -1,16 +1,22 @@
-import React from "react";
+import React,{useContext} from "react";
+
 // importe files
-import Todo from "../modals/Todo";
+import { TodosContext } from "../store/todos-context"
 import Task from "./Task";
-const Todos: React.FC<{ items: Todo[] }> = ({ items }) => {
+
+//  css files
+import classes from "./Todos.module.css";
+
+const Todos: React.FC = () => {
+  const todosCtx =useContext(TodosContext);
   return (
-    <div>
-      <ul>
-        {items.map((item) => (
-         <Task task={item}/>
+    <>
+      <ul className={classes.todos}>
+        {todosCtx.items.map((item) => (
+          <Task onRemoveTodo={todosCtx.removeTodo.bind(null, item.id)} task={item} />
         ))}
       </ul>
-    </div>
+    </>
   );
 };
 

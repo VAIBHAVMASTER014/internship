@@ -1,17 +1,29 @@
-import React,{useRef} from "react";
+import React, { useRef, useContext } from "react";
 
-const NewTodos = () => {
-    const taskInput = useRef();
+import { TodosContext } from "../../store/todos-context";
 
-    const submitHandler = (event:React.FormEvent)=>{
-        event.preventDefault();
+// css files
+import classes from "./NewTodo.module.css";
+const NewTodos: React.FC = () => {
+  const taskInput = useRef<HTMLInputElement>(null);
 
+  const todosCtx = useContext(TodosContext);
+  const submitHandler = (event: React.FormEvent) => {
+    event.preventDefault();
+
+    const enteredText = taskInput.current!.value;
+    if (enteredText.trim().length === 0) {
+      return;
     }
+
+    todosCtx.addTodo(enteredText);
+  };
+
   return (
-    <form onSubmit={submitHandler}>
+    <form onSubmit={submitHandler} className={classes.form}>
       <label htmlFor="text">Todo Task</label>
-      <input ref = {taskInput} type="text" id="text"></input>
-      <button  >Add Task</button>
+      <input ref={taskInput} type="text" id="text"></input>
+      <button>Add Task</button>
     </form>
   );
 };

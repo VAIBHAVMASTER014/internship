@@ -1,12 +1,22 @@
 import React from "react";
+
+// imported files
 import Todo from "../modals/Todo";
 
-const Task: React.FC<{ task: Todo }> = ({ task }) => {
+// css files
+import classes from "./Task.module.css";
+
+const Task: React.FC<{ task: Todo; onRemoveTodo: () => void }> = ({
+  task,
+  onRemoveTodo,
+}) => {
   return (
-    <div>
+    <>
       {" "}
-      <li key={task.id}>{task.text}</li>
-    </div>
+      <li key={task.id} className={classes.item} onClick={onRemoveTodo}>
+        {task.text}
+      </li>
+    </>
   );
 };
 
