@@ -4,14 +4,16 @@ import Movie from "./Movie";
 import classes from "./MoviesList.module.css";
 
 const MovieList = ({movies}) => {
+  console.log("in movielist:",movies)
   return (
     <ul className={classes["movies-list"]}>
-      {movies.map((movie) => (
+      {movies.map((item) => (
         <Movie
-          key={movie.id}
-          title={movie.title}
-          releaseDate={movie.releaseDate}
-          openingText={movie.openingText}
+          key={item.id}
+          item = {item}
+          // title={title}
+          // releaseDate={releaseDate}
+          // openingText={openingText}
         />
       ))}
     </ul>

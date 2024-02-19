@@ -2,7 +2,7 @@ import React from 'react';
 
 import classes from './Movie.module.css';
 
-const Movie = ({title, releaseDate, openingText}) => {
+const Movie = ({item:{title, openingText,releaseDate}}) => {
   return (
     <li className={classes.movie}>
       <h2>{title}</h2>
