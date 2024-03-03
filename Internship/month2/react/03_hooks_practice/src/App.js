@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { ToastContainer } from "react-toastify";
 import CartProvider from "./store/CartProvider";
 import Cart from "./components/Cart/Cart";
 import Header from "./components/Layout/Header";
@@ -15,6 +15,7 @@ function App() {
   };
   return (
     <CartProvider>
+      <ToastContainer />
       <Header onShowCart={showCart} />
       {cartVisibility && <Cart onHideCart={hideCart} />}
       <main>

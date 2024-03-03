@@ -1,0 +1,201 @@
+.recipie-section-title {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 60px;
+    margin-bottom: 15px;
+  }
+  .recipie-section-title span {
+    font-size: 48px;
+    font-weight: 700;
+  }
+  ul.recipie-name {
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    gap: 2rem;
+    color: black;
+    margin-bottom: 60px;
+  }
+  
+  li {
+    background: #ebebeb;
+    padding: 1.3rem 2.4rem;
+    border-radius: 3rem;
+    text-align: center;
+  }
+  li:hover {
+    background: orange;
+    color: white;
+  }
+  .recipie-card-section {
+    display: flex;
+    overflow-X: auto;
+    white-space: pre-line;
+    width: 100%;
+    justify-content: flex-start;
+    height: 550px;
+    
+  }
+  .recipie-card img {
+    
+    height: 208px;
+    margin: 10px 29px; 
+    
+    width:208px ;
+    object-position: 60% 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  .recipie-card {
+    margin: 23px;
+    border-radius: 9px;
+    height: 450px;
+    position: relative;
+    width: 320px;
+    border: 2px solid rgba(128, 128, 128, 0.311);
+    display: flex;
+    flex-direction: column;
+   
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0px 26px;
+  }
+  .ngn {
+    font-size: 25px;
+    margin-top:9px ;
+    margin-bottom: 7px;
+    
+}
+  .recipie-card-title > span {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  .card-content{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: space-evenly;
+    align-items: center;
+    
+  }
+  .recipie-card-title > p {
+    font-size: 14px;
+  }
+  .recipie-card-description {
+    font-size: 14px;
+    width: 95%;
+    align-self: flex-start;
+    
+  }
+  .recipie-card-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  .card-btn{
+    position: absolute;
+    top: 418px;
+    z-index: 5;
+    border-right:2px solid rgba(128, 128, 128, 0.311);
+    border-bottom:2px solid rgba(128, 128, 128, 0.311);
+    color:white;
+    background-color: rgb(255, 255, 255);
+    height: 60px;
+    transform: rotate(45deg);
+    width:60px ;
+    border-bottom-right-radius: 40%;
+    
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+  .card-btn button{
+    background-color: transparent;
+    transform: rotate(-45deg);
+    background-color: #ffffff;
+    height: 40px;
+    border:2px solid rgba(128, 128, 128, 0.311);
+    border-radius:50%;
+    width:40px ;
+    
+  }
+  .card-btn-clicked button{
+    background-color: transparent;
+    color:white;
+    transform: rotate(-45deg);
+    background-color: #F6B716;
+    height: 40px;
+    border-radius:50%;
+    width:40px ;
+    border: none;
+  }
+
+  /* delivery section */
+  .delivery-section-title {
+    font-size: 48px;
+    font-weight: 700;
+    width: var(--width);
+    margin: 0px auto;
+    line-height: 72px;
+    font-family: sans-serif;
+    color: white;
+  }
+  .delivery-section-title span {
+    color: orange;
+  }
+  .delivery-section {
+    background: url('../../../../public/images/Rectangle\ 12.png') no-repeat center center/cover;
+    height: 538px;
+    display: flex;
+    
+    align-items: center;
+  }
+.recipie-name button{
+  border: none;
+  background: transparent;
+}
+  /* food image section */
+  .burger {
+    background: url("../../../../public/images/Rectangle\ 14.png") no-repeat center center/cover;
+    max-height: 538px;
+    border-radius: 17px;
+    height: 100%;
+  }
+  .burger span {
+    font-size: 64px;
+    color: white;
+    text-align: center;
+  
+    height: 538px;
+    
+    display: flex;
+    padding-left: 2.3rem;
+    width: 24rem;
+    align-items: center;
+    text-align: left;
+    font-weight: 700;
+  }
+  .food-image {
+    display: flex;
+    margin: 12rem auto;
+    justify-content: center;
+    gap: 17px;
+    align-items: center;
+  }
+  .food-sub-image img {
+    width: 575px;
+    height: 259px;
+    border-radius: 16px;
+  }
+  .food-sub-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 17px;
+    justify-content: space-between;
+  }

@@ -9,7 +9,7 @@ import classes from "./HeaderCartButton.module.css";
 const HeaderCartButton = ({ onClick }) => {
   const cartCtx = useContext(CartContext);
   const [btnAnimation,setBtnAnimation] =useState(false);
-  const numberOfCartItems = cartCtx.items.reduce((currentCartValue, item) => {
+  const numberOfCartItems =  cartCtx.items.reduce((currentCartValue, item) => {
     return currentCartValue + item.amount;
   }, 0);
 

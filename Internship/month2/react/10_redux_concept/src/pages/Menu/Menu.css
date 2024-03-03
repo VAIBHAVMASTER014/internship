@@ -1,0 +1,134 @@
+
+.menu-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    justify-content: center;
+    width: 90vw;
+    margin: 4rem auto;
+  }
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .menu-brand ::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .menu-brand {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .brand-list {
+    display: flex;
+    gap: 7rem;
+    justify-content: flex-start;
+    overflow-x: scroll;
+    white-space: nowrap;
+    align-items: center;
+  }
+  .menu-title {
+    font-size: 32px;
+    font-weight: 700;
+  }
+  .list-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  
+  /* menu-food section */
+  .menu-food {
+    display: flex;
+    flex-direction: column;
+    gap: 2.8rem;
+    width: 90vw;
+    justify-content: center;
+    margin: 5rem auto;
+  }
+  .food-title {
+    font-size: 32px;
+    font-weight: 700;
+  }
+  .food-list {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 2.7rem;
+    grid-row-gap: 4rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .food-list img {
+    
+    max-width: 476px;
+    max-height: 259px;
+    width:100%;
+    height:100%;
+    border-radius: 13px;
+    margin-bottom: 10px;
+    object-fit: cover;
+    transition: all 0.25s ease;
+  }
+  .food-list img:hover {
+    transform: scale(1.1);
+  }
+  .food-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    
+  }
+  .food-item span {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .food-item p {
+    font-size: 16px;
+    font-weight: 300;
+  }
+  
+  /* menu-list section */
+  .menu-list {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    width: 90vw;
+    column-gap: 4rem;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom:80px;
+  }
+  
+  .content-item {
+    position: relative;
+    background-color: #000000;
+    border-radius: 19px;
+    max-height: 538px;
+    max-width: 446px;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .content-item img {
+    max-height: 538px;
+    max-width: 446px;
+    height: 100%;
+    width: 100%;
+    border-radius: 19px;
+    object-fit: cover;
+    opacity: 0.6;
+    transition: all 0.34s ease;
+  }
+  .content-item img:hover {
+    opacity: 1;
+  }
+  
+  .list-content {
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+    color: white;
+  }
+  

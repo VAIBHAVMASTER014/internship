@@ -1,0 +1,127 @@
+/* clicked section */
+
+.available-item {
+    display: flex;
+    flex-direction: column;
+    width: 68vw;
+    margin: 2rem auto;
+    gap: 4rem;
+   margin-bottom:4.5rem;
+  }
+  .clicked-section span {
+    font-weight: 500;
+    font-size: 20px;
+  }
+  .visible-section {
+    display: flex;
+  }
+  .visible-section hr {
+    border-color: #ffc300;
+    margin-right: 25px;
+  }
+  .left-sidebar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width:20vw;
+    gap: 1rem;
+  }
+  
+  
+  .item-link li {
+    padding: 10px;
+    margin-right: 3px;
+    font-size: 20px;
+    font-weight: 400;
+  }
+  
+  
+  .left-sidebar ul li:hover {
+    background-color: #ffc300;
+    color: aliceblue;
+  }
+  .right-scrollbar{
+      display: flex;
+      
+      flex-direction: column;
+      gap:3.9rem;
+    
+  }
+  
+  .selected-link{
+      font-size:32px;
+      font-weight:500;
+  }
+  .item-cards{
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+  
+      overflow-y: scroll;
+      max-height: 38rem;
+      height: 100%;
+      gap:25px;
+      width:40vw;
+  }
+  .item-cards::-webkit-scrollbar {
+      display: none;
+    }
+    
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .item-cards {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+  .item img{
+      max-width: 211px;
+      max-height: 186px;
+      width: 100%;
+      height: 100%;
+  }
+  .item{
+      display: flex;
+      gap:25px;
+      max-height: 186px;
+      height: 100%;
+  }
+  .item-content{
+      display: flex;
+      flex-direction: column;
+     
+      justify-content: space-between;
+      max-height: 175px;
+     
+      height: 100%;
+  }
+  .item-content button{
+      padding: 0.5rem 0.6rem;
+      border: 1px solid #ffffff;
+      background-color: #FFC300;
+      width: 120px;
+      font-weight: 500;
+      color:white;
+      text-align: center;
+      font-size: 20px;
+      border-radius: 3px;
+      max-width: 186px;
+      width: 100%;
+  }
+  
+  .item-content span{
+      font-size: 20px;
+      font-weight: 400;
+      
+  }
+  .item-content p{
+      font-size: 14px;
+      font-weight: 400;
+      color: #848484;
+  }
+  .content{
+      display: flex;
+      flex-direction: column;
+      gap:13px;
+     
+  }
+  

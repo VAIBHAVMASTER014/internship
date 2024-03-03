@@ -1,0 +1,62 @@
+.picture img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+  }
+  .picture-section {
+    position: relative;
+    width: 81rem;
+    margin: auto;
+  }
+  .picture-section::before {
+    content: "";
+    position: absolute;
+    z-index: 5;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+  .picture-card p {
+    line-height: 34px;
+  }
+  .picture-card {
+    position: absolute;
+    background: #f6b716;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    height: 200px;
+    width: 600px;
+    font-size: 22px;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 10;
+    margin: auto;
+    margin-bottom: 20rem;
+    top: 20.4rem;
+    left: 21.7rem;
+    box-shadow: 0px 5px 10px #f6b71662;
+    border-radius: 15px;
+    align-self: center;
+  }
+  .picture {
+    display: flex;
+    margin: 0px auto;
+    height: 100%;
+    flex-direction: column;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .picture-part-one {
+    display: flex;
+    gap: 3rem;
+  }
+  .picture-part-two {
+    display: flex;
+    gap: 3rem;
+  }
