@@ -2,6 +2,7 @@ import React from 'react'
 
 // css file
 import './Hero.css'
+
 const Hero = () => {
   return (
     <div className="hero">

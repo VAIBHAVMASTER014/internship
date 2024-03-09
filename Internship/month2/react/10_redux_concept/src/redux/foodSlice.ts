@@ -10,6 +10,86 @@ export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 
 const dummy_data = [
   {
+    image: "garlic.jpg",
+    title: "Eatalian Pizza",
+    description: "Dough, Mozzarella, Cheddar, Blue, Parmesan",
+    time: "32mins",
+    price: "179",
+    category: "garlic-bread",
+  },
+  {
+    image: "garlic2.jpg",
+    title: "Eatalian Pizza",
+    description: "Dough, Mozzarella, Cheddar, Blue, Parmesan",
+    time: "32mins",
+    price: "179",
+    category: "garlic-bread",
+  },
+  {
+    image: "lasagne.jpg",
+    title: "Eatalian Pizza",
+    description: "Dough, Mozzarella, Cheddar, Blue, Parmesan",
+    time: "32mins",
+    price: "179",
+    category: "lasagne",
+  },
+  {
+    image: "lasagne2.jpg",
+    title: "Eatalian Pizza",
+    description: "Dough, Mozzarella, Cheddar, Blue, Parmesan",
+    time: "32mins",
+    price: "179",
+    category: "shake",
+  },
+  {
+    image: "coldcoffe.jpg",
+    title: "Eatalian Pizza",
+    description: "Dough, Mozzarella, Cheddar, Blue, Parmesan",
+    time: "32mins",
+    price: "179",
+    category: "cold-coffee",
+  },
+  {
+    image: "hotCoffee.jpg",
+    title: "Eatalian Pizza",
+    description: "Dough, Mozzarella, Cheddar, Blue, Parmesan",
+    time: "32mins",
+    price: "179",
+    category: "hot-coffee",
+  },
+  {
+    image: "tea.jpg",
+    title: "Eatalian Pizza",
+    description: "Dough, Mozzarella, Cheddar, Blue, Parmesan",
+    time: "32mins",
+    price: "179",
+    category: "tea",
+  },
+  {
+    image: "wrap.jpg",
+    title: "Eatalian Pizza",
+    description: "Dough, Mozzarella, Cheddar, Blue, Parmesan",
+    time: "32mins",
+    price: "179",
+    category: "wrap",
+  },
+  {
+    image: "burrito.jpg",
+    title: "Eatalian Pizza",
+    description: "Dough, Mozzarella, Cheddar, Blue, Parmesan",
+    time: "32mins",
+    price: "179",
+    category: "burrito",
+  },
+  {
+    image: "taco.jpg",
+    title: "Eatalian Pizza",
+    description: "Dough, Mozzarella, Cheddar, Blue, Parmesan",
+    time: "32mins",
+    price: "179",
+    category: "taco",
+  },
+  {
     image: "pizza-386717_640.jpg",
     title: "Eatalian Pizza",
     description: "Dough, Mozzarella, Cheddar, Blue, Parmesan",
@@ -251,7 +331,7 @@ const dummy_data = [
   },
 ];
 
-const foodData = dummy_data.map((food, index) => {
+export const foodData = dummy_data.map((food, index) => {
   return {
     id: index,
     image: food.image,
@@ -259,6 +339,7 @@ const foodData = dummy_data.map((food, index) => {
     description: food.description,
     time: food.time,
     price: food.price,
+    quantity: 0,
     category: food.category,
   };
 });
@@ -275,9 +356,9 @@ const foodSlice = createSlice({
   initialState: initialState,
   reducers: {
     fetchFoodByCategory: (state, action) => {
-      state.food = foodData.filter(food=>{
-        return food.category === action.payload
-      })
+      state.food = foodData.filter((food) => {
+        return food.category === action.payload;
+      });
       state.status = "success";
     },
   },
@@ -288,132 +369,3 @@ export const { fetchFoodByCategory } = foodSlice.actions;
 export const food = (state: RootState) => state.food;
 export default foodSlice.reducer;
 
-// menu_page: {
-//   brand: [
-//     {
-//       image: "Ellipse 1.png",
-//       title: "La Pino'z",
-//     },
-//     {
-//       image: "Ellipse 3.png",
-//       title: "Mc Donalds",
-//     },
-//     {
-//       image: "Ellipse 4.png",
-//       title: "StarBucks",
-//     },
-//     {
-//       image: "Ellipse 1.png",
-//       title: "KFC",
-//     },
-//     {
-//       image: "Ellipse 5.png",
-//       title: "Burger King",
-//     },
-//     {
-//       image: "Ellipse 4.png",
-//       title: "Coffee Culture",
-//     },
-//   ],
-//   food: [
-//     {
-//       image: "Rectangle 15.png",
-//       title: "Vadapav",
-//       time: "30 Min",
-//     },
-//     {
-//       image: "Rectangle 16.png",
-//       title: "Panipuri",
-//       time: "30 Min",
-//     },
-//     {
-//       image: "Rectangle 17.png",
-//       title: "PavBhaji",
-//       time: "30 Min",
-//     },
-//     {
-//       image: "Rectangle 18.png",
-//       title: "IceCream",
-//       time: "30 Min",
-//     },
-//     {
-//       image: "Rectangle 19.png",
-//       title: "Sandwich",
-//       time: "30 Min",
-//     },
-//     {
-//       image: "Rectangle 20.png",
-//       title: "Pizza",
-//       time: "30 Min",
-//     },
-//   ],
-//   list: [
-//     {
-//       image: "Rectangle 21.png",
-//       title: "Veggie friendly",
-//       description: "29 Places Near You",
-//     },
-//     {
-//       image: "Rectangle 23.png",
-//       title: "Trending this week",
-//       description: "29 Places Near You",
-//     },
-//     {
-//       image: "Rectangle 25.png",
-//       title: "Authentic",
-//       description: "29 Places Near You",
-//     },
-//   ],
-// },
-// selected_brand: [
-//   {
-//     image: "Rectangle 14.png",
-//     title: "Margherita Pizza",
-//     description: "A Classic Cheesy Margharita. Can't Go Wrong.",
-//     price: "179",
-//   },
-//   {
-//     image: "Rectangle 15(1).png",
-//     title: "Double Cheese pizza",
-//     description: "A Classic Cheesy Margharita. Can't Go Wrong.",
-//     price: "179",
-//   },
-//   {
-//     image: "Rectangle 16(1).png",
-//     title: "Garden delight",
-//     description: "A Classic Cheesy Margharita. Can't Go Wrong.",
-//     price: "179",
-//   },
-//   {
-//     image: "Rectangle 33.png",
-//     title: "Paneer Pizza",
-//     description: "A Classic Cheesy Margharita. Can't Go Wrong.",
-//     price: "179",
-//   },
-//   {
-//     image: "Rectangle 14.png",
-//     title: "7 cheesy Pizza",
-//     description: "A Classic Cheesy Margharita. Can't Go Wrong.",
-//     price: "179",
-//   },
-// ],
-
-// url for api
-// const options = {
-//   method: "GET",
-//   url: "https://pizza-and-desserts.p.rapidapi.com/pizzas",
-//   headers: {
-//     "X-RapidAPI-Key": "202e83a0d6msh9a99d4927d2b0d8p1691b0jsn99bea2f39837",
-//     "X-RapidAPI-Host": "pizza-and-desserts.p.rapidapi.com",
-//   },
-// };
-
-// // fetching data using thunk
-// export const fetchAllPizza = createAsyncThunk("fetchAllPizza", async () => {
-//   try {
-//     const response = await axios.request(options);
-//     console.log(response.data);
-//   } catch (error) {
-//     console.error(error);
-//   }
-// });

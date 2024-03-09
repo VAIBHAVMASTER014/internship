@@ -11,12 +11,9 @@ const Footer = () => {
           <span>Download our app</span>
         </div>
         <div className="footer-button">
-          <button>
-            <img src="images/Group 11.png" alt="" />
-          </button>
-          <button>
-            <img src="/images/Group 12.png" alt="" />
-          </button>
+          <img src="images/Group 11.png" alt="" />
+
+          <img src="/images/Group 12.png" alt="" />
         </div>
       </div>
     </div>

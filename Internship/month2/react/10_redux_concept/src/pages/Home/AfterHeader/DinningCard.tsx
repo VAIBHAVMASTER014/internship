@@ -1,6 +1,7 @@
 import React from "react";
 
 type DinningCardPropType  = { id: number, title: string, image: string, description: string }
+
 const DinningCard:React.FC<{dinningData:DinningCardPropType}> = ({dinningData}) => {
   return (
     <div className="card">

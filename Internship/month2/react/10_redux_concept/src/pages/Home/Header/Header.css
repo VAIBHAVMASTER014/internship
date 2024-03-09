@@ -4,7 +4,7 @@
   flex-direction: column;
   background: url("../../../../public/images/Rectangle\ 1.png") no-repeat center
     center/cover;
-  
+
   height: 508px;
   position: relative;
 }
@@ -20,8 +20,7 @@
   display: flex;
   flex-direction: column;
   align-self: center;
-
-  height: 450px;
+  height: 100%;
   max-width: 100vw;
   color: white;
   text-align: center;
@@ -52,8 +51,9 @@
   margin: 0 auto;
   margin-top: 100px;
   background-color: white;
-  padding: 1rem;
+  align-items: center;
   width: 642px;
+  margin-bottom: 9px;
   height: 60px;
   border-radius: 8px;
 }
@@ -61,9 +61,10 @@
   display: flex;
   border: none;
   font-size: large;
-  width: 4.5rem;
+ 
   margin: 0rem;
-  margin-right: 3rem;
+ 
+  margin-left: 1rem;
   border-radius: 8px;
   align-self: center;
 }
@@ -76,4 +77,56 @@
   width: 23rem;
   border-radius: 8px;
   align-self: center;
+  outline-color: blue;
+  outline-style: none;
+}
+select {
+  outline-style: none;
+}
+button {
+  background-color: #ffc300;
+  height: 60px;
+  width: 70px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  font-size: large;
+  color: white;
+  cursor: pointer;
+  border: none;
+}
+.header-list {
+  font-size: large;
+
+  /* border-bottom:1px solid #1310055d; */
+  height: 24px;
+  width: 100%;
+}
+.header-list:hover {
+  border-bottom: 1px solid #ffc300;
+  width: 100%;
+}
+.invisible {
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 150px;
+  align-items: flex-start;
+  justify-content: space-around;
+  margin: 0 auto;
+  border-radius: 8px;
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.326);
+}
+.Brands {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 150px;
+  align-items: flex-start;
+  justify-content: space-around;
+  margin: 0 auto;
+  border-radius: 8px;
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.326);
 }

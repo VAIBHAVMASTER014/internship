@@ -1,141 +1,59 @@
-import React from 'react'
+import React from "react";
 
-const ItemCard = () => {
+// imported files
+import { useAppDispatch } from "../../redux/foodSlice";
+import { addToCart, removeFromCart } from "../../redux/cartSlice";
 
-    const dummy_data=[
-        {
-            image:"Rectangle 15 (3).png",
-            title:"Marghrita Pizza",
-            price:"140",
-            
-        }
-    ]
-  return (
-    <div>
-        <div className="cart-items">
-      <div className="item">
-        <img src="./asset/" alt="" />
-        <div className="name-price">
-          <span>Marghrita Pizza</span>
-          <p>&#8377; 140</p>
-        </div>
-        <p>A classNameic Cheesy Margharita. Can't Go Wrong.</p>
-        <div className="cart-btns">
-          <button>-</button>
-          <span>01</span>
-          <button>+</button>
-        </div>
-        <div className="total">
-          <div className="sub-total">
-            <p>Subtotal</p>
-            <span>&#8377; 140</span>
-          </div>
-          <hr />
-          <div className="total-price">
-            <p>Total</p>
-            <span>&#8377; 140</span>
-          </div>
-        </div>
-      </div>
-      <div className="item">
-        <img src="./asset/Rectangle 95.png" alt="" />
-        <div className="name-price">
-          <span>Marghrita Pizza</span>
-          <p>&#8377; 140</p>
-        </div>
-        <p>A classNameic Cheesy Margharita. Can't Go Wrong.</p>
-        <div className="cart-btns">
-          <button>-</button>
-          <span>01</span>
-          <button>+</button>
-        </div>
-        <div className="total">
-          <div className="sub-total">
-            <p>Subtotal</p>
-            <span>&#8377; 140</span>
-          </div>
-          <hr />
-          <div className="total-price">
-            <p>Subtotal</p>
-            <span>&#8377; 140</span>
-          </div>
-        </div>
-      </div>
-      <div className="item">
-        <img src="./asset/Rectangle 102.png" alt="" />
-        <div className="name-price">
-          <span>Marghrita Pizza</span>
-          <p>&#8377; 140</p>
-        </div>
-        <p>A classNameic Cheesy Margharita. Can't Go Wrong.</p>
-        <div className="cart-btns">
-          <button>-</button>
-          <span>01</span>
-          <button>+</button>
-        </div>
-        <div className="total">
-          <div className="sub-total">
-            <p>Subtotal</p>
-            <span>&#8377; 140</span>
-          </div>
-          <hr />
-          <div className="total-price">
-            <p>Subtotal</p>
-            <span>&#8377; 140</span>
-          </div>
-        </div>
-      </div>
-      <div className="item">
-        <img src="./asset/Rectangle 115.png" alt="" />
-        <div className="name-price">
-          <span>Marghrita Pizza</span>
-          <p>&#8377; 140</p>
-        </div>
-        <p>A classNameic Cheesy Margharita. Can't Go Wrong.</p>
-        <div className="cart-btns">
-          <button>-</button>
-          <span>01</span>
-          <button>+</button>
-        </div>
-        <div className="total">
-          <div className="sub-total">
-            <p>Subtotal</p>
-            <span>&#8377; 140</span>
-          </div>
-          <hr />
-          <div className="total-price">
-            <p>Subtotal</p>
-            <span>&#8377; 140</span>
-          </div>
-        </div>
-      </div>
-      <div className="item">
-        <img src="./asset/Rectangle 116.png" alt="" />
-        <div className="name-price">
-          <span>Marghrita Pizza</span>
-          <p>&#8377; 140</p>
-        </div>
-        <p>A classNameic Cheesy Margharita. Can't Go Wrong.</p>
-        <div className="cart-btns">
-          <button>-</button>
-          <span>01</span>
-          <button>+</button>
-        </div>
-        <div className="total">
-          <div className="sub-total">
-            <p>Subtotal</p>
-            <span>&#8377; 140</span>
-          </div>
-          <hr />
-          <div className="total-price">
-            <p>Subtotal</p>
-            <span>&#8377; 140</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
-  )
+interface CartItem {
+  id: number;
+  price: string;
+  image: string;
+  title: string;
+  description: string;
+  time: string;
+  quantity: number;
+  category: string;
 }
 
-export default ItemCard
+const ItemCard: React.FC<{ addItem: CartItem }> = ({ addItem }) => {
+  const totalItemPrice = addItem.quantity * Number(addItem.price);
+  const imgPath = `/apiImages/${addItem.image}`;
+
+  const dispatch = useAppDispatch();
+  const addItemToCartHandler = (item: CartItem) => {
+    dispatch(addToCart(item));
+  };
+  const removeFromCartaHandler = (item: CartItem) => {
+    dispatch(removeFromCart(item));
+  };
+  return (
+    <>
+      <div className="item">
+        <img src={imgPath} alt="" />
+        <div className="name-price">
+          <span>{addItem.title}</span>
+          <p>₹ {addItem.price}</p>
+        </div>
+        <p>A classic Cheesy Margharita. Can't Go Wrong.</p>
+        <div className="cart-btns">
+          <button type="button" onClick={() => removeFromCartaHandler(addItem)}>
+            -
+          </button>
+          <span>{addItem.quantity}</span>
+          <button type="button" onClick={() => addItemToCartHandler(addItem)}>
+            +
+          </button>
+        </div>
+        <div className="total">
+          <hr />
+          <div className="total-price">
+            <p>Sub Total :</p>
+            <span>₹ {totalItemPrice}</span>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default ItemCard;

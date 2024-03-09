@@ -1,21 +1,23 @@
-import React from 'react'
+import React from "react";
+
+// imported files
+import Brandlist from "./Brandlist";
+import Foodlist from "./Foodlist";
 
 // css files
-import './Menu.css'
-import Brandlist from './Brandlist'
-import Foodlist from './Foodlist'
+import "./Menu.css";
 
 const Menu = () => {
   return (
     <div>
-        <div className="menu-brand">
+      <div className="menu-brand">
         <div className="menu-title">Top brands for you</div>
-        <Brandlist/>
+        <Brandlist />
       </div>
 
       <div className="menu-food">
         <div className="food-title">Food according to weather</div>
-        <Foodlist/>
+        <Foodlist />
       </div>
 
       <div className="menu-list">
@@ -41,9 +43,8 @@ const Menu = () => {
           </div>
         </div>
       </div>
-      
     </div>
-  )
-}
+  );
+};
 
-export default Menu
+export default Menu;

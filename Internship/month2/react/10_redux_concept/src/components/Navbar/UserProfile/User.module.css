@@ -1,0 +1,46 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 200;
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+  
+  .modal {
+    position: fixed;
+    padding: 20px;
+    top: 80px;
+    right: 100px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    z-index: 250;
+    border-radius: 10px;
+    animation: slide-down 300ms ease-out forwards;
+  }
+  
+  .profile-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap:20px;
+    height: 100%;
+  }
+
+  @media (min-width: 768px) {
+   
+  }
+  
+  @keyframes slide-down {
+    from {
+      opacity: 0;
+      transform: translateY(-3rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }

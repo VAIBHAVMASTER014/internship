@@ -1,5 +1,8 @@
 import React from "react";
+
+// imported files
 import DinningCard from "./DinningCard";
+
 // css file
 import "./AfterHeader.css";
 
@@ -30,7 +33,9 @@ const AfterHeader: React.FC = () => {
     },
   ];
 
-  const content = dinningData.map((data) => <DinningCard dinningData={data} />);
+  const content = dinningData.map((data, index) => (
+    <DinningCard key={index} dinningData={data} />
+  ));
 
   return <div className="dinning-out">{content}</div>;
 };

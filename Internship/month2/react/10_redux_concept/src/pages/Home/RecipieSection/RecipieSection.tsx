@@ -1,24 +1,32 @@
+import { useState } from "react";
+
+// imported files
 import RecipieCard from "./RecipieCard";
-import { useAppSelector, useAppDispatch, fetchFoodByCategory } from "../../../redux/foodSlice";
+import {
+  useAppSelector,
+  useAppDispatch,
+  fetchFoodByCategory,
+} from "../../../redux/foodSlice";
+
 // css files
 import "./RecipieSection.css";
 
 const RecipieSection = () => {
   const allFood = useAppSelector((state) => state.food.food);
-  const status = useAppSelector((state) => state.food.status);
-
+  const [selectedCategory, setSelectedCategory] = useState("");
 
   const dispatch = useAppDispatch();
 
-  const foodCategoryList = ["Pizza", "Sides", "Burger", "Desssert", "Drinks"];
+  const foodCategoryList = ["Pizza", "Sides", "Burger", "Dessert", "Drinks"];
   const content = allFood.map((food, index) => (
     <RecipieCard key={index} foodItem={food} />
   ));
 
-  const foodCategoryHandler = (category)=>{
-    dispatch(fetchFoodByCategory(category))
-  }
-  console.log(content);
+  const foodCategoryHandler = (category: string) => {
+    setSelectedCategory(category);
+    dispatch(fetchFoodByCategory(category.toLowerCase()));
+  };
+
   return (
     <div>
       <div className="recipie-section">
@@ -29,7 +37,13 @@ const RecipieSection = () => {
         </div>
         <ul className="recipie-name">
           {foodCategoryList.map((recipie, index) => (
-            <li key={index}><button onClick={foodCategoryHandler(recipie)}>{recipie}</button></li>
+            <li
+              key={index}
+              className={selectedCategory === recipie ? "active" : ""}
+              onClick={() => foodCategoryHandler(recipie)}
+            >
+              {recipie}
+            </li>
           ))}
         </ul>
         <div className="recipie-card-section">{content}</div>
