@@ -211,16 +211,16 @@ const Signup = () => {
     cpassword: "",
   });
 
-  const [showError, setShowError] = useState(false);
+  console.log(errors)
+  const showError = Object.values(errors).some((error) => error !== "");
 
-  const isValidForm =
-    Object.values(errors).every((x) => x === "") &&
-    Object.values(form).every((x) => x !== "");
+  const isValidForm = Object.values(form).every((x) => x !== "");
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setForm({ ...form, [name]: value });
     validateField(name, value);
+    setErrors(initialData)
   };
 
   const validateField = (name: string, value: string) => {
@@ -258,13 +258,13 @@ const Signup = () => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-  
+
     if (isValidForm) {
       localStorage.setItem("registerData", JSON.stringify(form));
       toastFuncSuccess("Register successful");
-      navigate("/");
+      navigate("/login");
     } else {
-      setShowError(!isValidForm);
+     
       Object.keys(form).forEach((name) => {
         validateField(name, form[name as keyof typeof form]);
       });
@@ -328,13 +328,11 @@ const Signup = () => {
               onChange={handleChange}
               className={errors[field.name] ? "input-error" : ""}
             />
-            {showError && (
-              <p className="error-msg">{errors[field.name]}</p>
-            )}
+            {showError && <p className="error-msg">{errors[field.name]}</p>}
           </div>
         ))}
         <button
-         disabled={isValidForm}
+          disabled={!isValidForm}
           className={isValidForm ? "btn" : "invalid-btn"}
           type="submit"
         >

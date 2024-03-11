@@ -1,17 +1,25 @@
-import React, { ChangeEvent} from "react";
-import "../Signup/Signup.css";
+import React, { ChangeEvent, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+
+// imported files
 import { useAppDispatch } from "../../redux/foodSlice";
 import { validate } from "../../redux/cartSlice";
+import { toastFuncSuccess } from "../../util/ToastFunc";
 
-import { toastFuncSuccess, toastFuncWarn } from "../../util/ToastFunc";
-const initialData = {
+// css file
+import "../Signup/Signup.css";
+
+type FormData = {
+  [key: string]: string; // This allows any string as a key and string as value
+};
+
+const initialData: FormData = {
   email: "",
   password: "",
 };
 const Login = () => {
   const dispatch = useAppDispatch();
-  const [form, setForm] = React.useState(initialData);
+  const [form, setForm] = React.useState<FormData>(initialData);
   const navigate = useNavigate();
   const formField = [
     {
@@ -19,7 +27,7 @@ const Login = () => {
       name: "email",
       type: "email",
       id: "email",
-      value:form.email,
+      value: form.email,
       placeholder: "Enter email",
     },
     {
@@ -27,14 +35,25 @@ const Login = () => {
       name: "password",
       type: "password",
       id: "password",
-      value:form.password,
+      value: form.password,
       placeholder: "Enter password",
     },
   ];
-  const buttonBehaviour = form.email.length>0 && form.password.length>0
+
+  const [errors, setErrors] = useState<FormData>({
+    email: "",
+    password: "",
+  });
+  const isValidForm =
+    Object.values(errors).every((x) => x === "") &&
+    Object.values(form).every((x) => x !== "");
+
+  const showError = Object.values(errors).some((x) => x !== "");
 
   const inputHandler = (event: ChangeEvent<HTMLInputElement>) => {
-    setForm({ ...form, [event.target.name]: event.target.value });
+    const { name, value } = event.target;
+    setForm({ ...form, [name]: value });
+    setErrors(initialData)
   };
 
   const submitHandler = (event: ChangeEvent<HTMLFormElement>) => {
@@ -48,12 +67,22 @@ const Login = () => {
     ) {
       dispatch(validate(true));
       toastFuncSuccess("login done successfully");
-      console.log("login success");
       navigate("/");
     } else {
-      console.log("login failes")
-      toastFuncWarn("Login failed enter data again");
-      setForm(initialData)
+      if (
+        validData["password"] !== form["password"] &&
+        validData["email"] !== form["email"]
+      ) {
+        setErrors({
+          ...errors,
+          password: "Invalid password",
+          email: "Invalid email",
+        });
+      } else if (validData["email"] !== form["email"]) {
+        setErrors({ ...errors, email: "Invalid email" });
+      } else {
+        setErrors({ ...errors, password: "Invalid password" });
+      }
     }
   };
   return (
@@ -75,9 +104,14 @@ const Login = () => {
                 placeholder={field.placeholder}
                 onChange={inputHandler}
               />
+              {showError && <p className="error-msg">{errors[field.name]}</p>}
             </div>
           ))}
-          <button disabled={!buttonBehaviour} type="submit" className={buttonBehaviour ? "btn" : "invalid-btn"}>
+          <button
+            disabled={!isValidForm}
+            type="submit"
+            className={isValidForm ? "btn" : "invalid-btn"}
+          >
             Log In
           </button>
         </form>

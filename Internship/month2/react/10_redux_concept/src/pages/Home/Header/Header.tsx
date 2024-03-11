@@ -61,8 +61,8 @@ const Header = () => {
             </button>
           </div>
           <div className={input ? " Brands" : "invisible"}>
-            {brandList.map((brand) => (
-              <div className="header-list" onClick={() => onBrandClick(brand)}>
+            {brandList.map((brand, index) => (
+              <div key={index} className="header-list" onClick={() => onBrandClick(brand)}>
                 {brand}
               </div>
             ))}

@@ -12,6 +12,9 @@
   padding: 15px;
   color: #ffc300;
 }
+.error-msg{
+  color: red;
+}
 .header {
   padding-top: 10px;
   text-align: center;
