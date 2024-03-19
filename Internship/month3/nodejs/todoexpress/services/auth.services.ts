@@ -1,21 +1,26 @@
 import fs from "fs"
 import path from "path";
 import  jwt  from "jsonwebtoken";
+
+// imported files
 import { authDataType } from "../types";
 import { ERROR, SUCCESS } from "../utils/rest-responses";
 import { HTTP_STATUS_CODES,ERROR_MESSAGES,SUCCESS_MESSAGES } from "../assets/constants";
+import { readFromJson } from "./file.services";
+
+let registrationData: authDataType[] = readFromJson(path.join(__dirname, "../data/registerData.json"))
 
 export const signupService = (
-  availableData: authDataType[],
+
   clientData: authDataType
 ) => {
   try {
-    availableData.sort(
+    registrationData.sort(
       (a: authDataType, b: authDataType) => a.userId - b.userId
     );
-    let userId = availableData[availableData.length - 1].userId + 1 || 1;
+    let userId = registrationData[registrationData.length - 1].userId + 1 || 1;
     let emailExist =
-      availableData.find(
+      registrationData.find(
         (data: authDataType) => data.email === clientData.email
       ) || false;
     if (emailExist) {
@@ -23,14 +28,14 @@ export const signupService = (
       const errorMessage = ERROR_MESSAGES._Conflict("Email");
       return ERROR(errorMessage, statusCode);
     } else {
-      availableData.push({
+      registrationData.push({
         email: clientData.email,
         password: clientData.password,
         userId: userId,
       });
       fs.writeFileSync(
         path.join(__dirname, "../data/registerData.json"),
-        JSON.stringify(availableData, null, 2)
+        JSON.stringify(registrationData, null, 2)
       );
       const statusCode = HTTP_STATUS_CODES.OK;
       const successMessage = SUCCESS_MESSAGES._Ok("Registration operation");
@@ -44,12 +49,11 @@ export const signupService = (
 };
 
 export const loginService = (
-  availableData: authDataType[],
   clientData: authDataType
 ) => {
   try{
     let isValid =
-    availableData.find(
+    registrationData.find(
       (data: authDataType) =>
         data.email === clientData.email && data.password === clientData.password
     ) || false;
@@ -67,7 +71,7 @@ export const loginService = (
         expiresIn: 86400,
       }
     );
-    const successMessage = SUCCESS_MESSAGES._Ok("login ");
+    const successMessage = SUCCESS_MESSAGES._Ok("login");
     const statusCode = HTTP_STATUS_CODES.OK;
     return SUCCESS(successMessage, statusCode,token);
   }
